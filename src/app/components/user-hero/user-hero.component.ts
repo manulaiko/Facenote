@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UserService} from '../../services/user.service';
+import {User} from '../../models/user.model';
 
 /**
  * User hero component.
@@ -13,5 +15,14 @@ import {Component} from '@angular/core';
   templateUrl: './user-hero.component.html',
   styleUrls: ['./user-hero.component.sass']
 })
-export class UserHeroComponent {
+export class UserHeroComponent implements OnInit {
+  private user: User;
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.userService.getUser().subscribe(user => {
+      this.user = user;
+    });
+  }
 }
