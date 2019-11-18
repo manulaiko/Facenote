@@ -7,6 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { UserHeroComponent } from './user-hero/user-hero.component';
 import { FooterComponent } from './footer/footer.component';
+import { MyFeedComponent } from './pages/my-feed/my-feed.component';
+import { MyThingsComponent } from './pages/my-things/my-things.component';
+import { MyContactsComponent } from './pages/my-contacts/my-contacts.component';
+import { EventsComponent } from './pages/events/events.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     NavigationComponent,
     UserHeroComponent,
-    FooterComponent
+    FooterComponent,
+    MyFeedComponent,
+    MyThingsComponent,
+    MyContactsComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
