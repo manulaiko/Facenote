@@ -12,6 +12,7 @@ import {MyThingsComponent} from './pages/my-things/my-things.component';
 import {MyContactsComponent} from './pages/my-contacts/my-contacts.component';
 import {EventsComponent} from './pages/events/events.component';
 import {HttpClientModule} from '@angular/common/http';
+import {UserService} from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
