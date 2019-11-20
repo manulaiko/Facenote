@@ -14,4 +14,12 @@ import {Component} from '@angular/core';
   styleUrls: ['./my-feed.component.sass']
 })
 export class MyFeedComponent {
+  /**
+   * Publishes a new story.
+   *
+   * @param text Story text.
+   */
+  public publishStory(text: string) {
+    console.log(text);
+  }
 }

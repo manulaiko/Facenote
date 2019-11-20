@@ -13,6 +13,8 @@ import {MyContactsComponent} from './pages/my-contacts/my-contacts.component';
 import {EventsComponent} from './pages/events/events.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './services/user.service';
+import {SaySomethingComponent} from './components/say-something/say-something.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import {UserService} from './services/user.service';
     MyFeedComponent,
     MyThingsComponent,
     MyContactsComponent,
-    EventsComponent
+    EventsComponent,
+    SaySomethingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     UserService
