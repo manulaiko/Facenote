@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Message} from '../../models/message.model';
+import {User} from '../../models/user.model';
 
 /**
  * My Feed component.
@@ -13,7 +15,24 @@ import {Component} from '@angular/core';
   templateUrl: './my-feed.component.html',
   styleUrls: ['./my-feed.component.sass']
 })
-export class MyFeedComponent {
+export class MyFeedComponent implements OnInit {
+  private stories: Message[] = [];
+
+  ngOnInit(): void {
+    const user = new User();
+    user.user = 'testUser';
+    user.name = 'User';
+
+    const message = new Message();
+    message.id = 0;
+    message.publishDate = new Date().toDateString();
+    message.content = 'Test';
+    message.usersId = 0;
+    message.user = user;
+
+    this.stories.push(message);
+  }
+
   /**
    * Publishes a new story.
    *

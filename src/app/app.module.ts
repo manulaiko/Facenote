@@ -14,6 +14,7 @@ import {EventsComponent} from './pages/events/events.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './services/user.service';
 import {SaySomethingComponent} from './components/say-something/say-something.component';
+import {FeedComponent} from './components/feed/feed.component';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
@@ -27,7 +28,8 @@ import {FormsModule} from '@angular/forms';
     MyThingsComponent,
     MyContactsComponent,
     EventsComponent,
-    SaySomethingComponent
+    SaySomethingComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
