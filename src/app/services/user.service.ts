@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../models/user.model';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
+import {user, users} from '../mock/user.mock';
 
 /**
  * User service.
@@ -24,6 +25,16 @@ export class UserService {
    * @return Logged in user.
    */
   getUser(): Observable<User> {
-    return this.http.get<User>('http://localhost:8080/users/1');
+    return of<User>(user);
+    // return this.http.get('http://localhost:8080/user/1');
+  }
+
+  /**
+   * Returns all users.
+   *
+   * @return All users in backend.
+   */
+  getAllUsers(): Observable<User[]> {
+    return of<User[]>(users);
   }
 }

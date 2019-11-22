@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Message} from '../../models/message.model';
-import {User} from '../../models/user.model';
+import {MessageService} from '../../services/message.service';
+import {user} from '../../mock/user.mock';
 
 /**
  * My Feed component.
@@ -18,19 +19,13 @@ import {User} from '../../models/user.model';
 export class MyFeedComponent implements OnInit {
   private stories: Message[] = [];
 
+  constructor(private service: MessageService) {
+  }
+
   ngOnInit(): void {
-    const user = new User();
-    user.user = 'testUser';
-    user.name = 'User';
-
-    const message = new Message();
-    message.id = 0;
-    message.publishDate = new Date().toDateString();
-    message.content = 'Test';
-    message.usersId = 0;
-    message.user = user;
-
-    this.stories.push(message);
+    this.service.getAllMessages().subscribe(messages => {
+      this.stories = messages;
+    });
   }
 
   /**
@@ -39,6 +34,6 @@ export class MyFeedComponent implements OnInit {
    * @param text Story text.
    */
   public publishStory(text: string) {
-    console.log(text);
+    this.service.create(text, user);
   }
 }
