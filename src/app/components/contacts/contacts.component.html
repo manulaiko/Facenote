@@ -1,0 +1,14 @@
+<section>
+  <div class="media" *ngFor="let user of contacts">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{ user.name }}</strong> <small> @{{ user.user }}</small>
+        </p>
+      </div>
+    </div>
+    <div class="media-right">
+      <button class="delete"></button>
+    </div>
+  </div>
+</section>

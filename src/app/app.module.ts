@@ -16,6 +16,7 @@ import {UserService} from './services/user.service';
 import {SaySomethingComponent} from './components/say-something/say-something.component';
 import {FeedComponent} from './components/feed/feed.component';
 import {FormsModule} from '@angular/forms';
+import {ContactsComponent} from './components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {FormsModule} from '@angular/forms';
     MyContactsComponent,
     EventsComponent,
     SaySomethingComponent,
-    FeedComponent
+    FeedComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
