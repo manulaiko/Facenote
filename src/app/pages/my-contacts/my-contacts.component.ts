@@ -1,4 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {User} from '../../models/user.model';
+import {UserService} from '../../services/user.service';
+import {user} from '../../mock/user.mock';
 
 /**
  * My Contacts component.
@@ -13,5 +16,15 @@ import {Component} from '@angular/core';
   templateUrl: './my-contacts.component.html',
   styleUrls: ['./my-contacts.component.sass']
 })
-export class MyContactsComponent {
+export class MyContactsComponent implements OnInit {
+  contacts: User[];
+
+  constructor(private service: UserService) {
+  }
+
+  ngOnInit(): void {
+    this.service.getRelationships(user).subscribe(users => {
+      this.contacts = users;
+    });
+  }
 }
