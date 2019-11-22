@@ -37,4 +37,17 @@ export class UserService {
   getAllUsers(): Observable<User[]> {
     return of<User[]>(users);
   }
+
+  /**
+   * Returns the contacts of the given user.
+   *
+   * @param user User to get the contacts.
+   *
+   * @return Contacts of `user`.
+   */
+  getRelationships(user: User): Observable<User[]> {
+    return of<User[]>(users.filter(u => {
+      return u.id !== user.id;
+    }));
+  }
 }

@@ -47,4 +47,15 @@ export class MessageService {
   public getAllMessages(): Observable<Message[]> {
     return of<Message[]>(messages);
   }
+
+  /**
+   * Returns all messages of an user.
+   *
+   * @return Messages of the given user.
+   */
+  public getUserMessages(user: User): Observable<Message[]> {
+    return of<Message[]>(messages.filter(v => {
+      return v.usersId === user.id;
+    }));
+  }
 }

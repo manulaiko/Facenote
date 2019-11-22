@@ -1,1 +1,12 @@
-<p>my-things works!</p>
+<section class="columns">
+  <article class="column is-9">
+    <h2 class="subtitle">Mis historietas</h2>
+    <hr/>
+    <app-feed [stories]="stories"></app-feed>
+  </article>
+  <article class="column is-3">
+    <h2 class="subtitle">Mis contactos</h2>
+    <hr/>
+    <app-contacts [contacts]="contacts"></app-contacts>
+  </article>
+</section>
